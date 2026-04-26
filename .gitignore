@@ -1,0 +1,26 @@
+# ╔══════════════════════════════════════════════════════════════════════════╗
+# ║  WHITELIST MODE — Repo public CHỈ chứa docs cho user cuối                 ║
+# ║  Source code, build scripts, license module → KHÔNG public               ║
+# ║  Binaries (.exe, Setup.exe) → upload qua GitHub Releases, không trong repo║
+# ╚══════════════════════════════════════════════════════════════════════════╝
+
+# Default: ignore EVERYTHING
+*
+
+# ─── Whitelist: chỉ những file dưới đây được track + push ────────────────
+!.gitignore
+!README.md
+!CHANGELOG.md
+!HUONG_DAN_SU_DUNG_AUTO_POWER_SCHEDULER.md
+!HUONG_DAN_NHANH_GUI_KHACH_HANG.md
+
+# ─── KHÔNG whitelist (giữ private):
+#   - Tất cả .py source code
+#   - Tất cả .bat / .ps1 / .iss build scripts
+#   - License module + vendor tools (license_*.py, license.dat)
+#   - Internal docs (HUONG_DAN_TAO_GITHUB_RELEASE.md, TASKS.md)
+#   - Runtime data (auto_power_config.json, log files)
+#   - Build artifacts (*.exe, dist_nuitka/, __pycache__/)
+#   - Skill folders (engineering-team/, product-team/)
+#   - Other projects (AppPlayVideo*, dashboard.html)
+#   - Archive folders (_archive/, _other_projects/)
