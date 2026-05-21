@@ -24,37 +24,29 @@ Phan mem phu hop cho kiosk, may POS, may treo quang cao, may van hanh theo gio c
 
 ## 3. Cac file trong bo phan mem
 
-- `AutoPowerScheduler.exe`: file chay chinh da dong goi
-- `auto_power_scheduler.py`: ma nguon Python
-- `build_exe.bat`: script build file `.exe`
-- `installer.iss`: file tao bo cai bang Inno Setup
-- `HUONG_DAN_SU_DUNG_AUTO_POWER_SCHEDULER.md`: tai lieu huong dan nay
+Phan mem phan phoi qua GitHub Releases, moi release co 2 file:
+
+- `AutoPowerScheduler_Setup_v3.X.exe`: bo cai dat (khuyen nghi cho deploy hang loat)
+- `AutoPowerScheduler.exe`: binary don (chay truc tiep, can quyen Administrator)
+
+Kem theo trong repo public:
+
+- `HUONG_DAN_SU_DUNG_AUTO_POWER_SCHEDULER.md`: tai lieu huong dan day du (file nay)
+- `HUONG_DAN_NHANH_GUI_KHACH_HANG.md`: tai lieu nhanh cho khach hang cuoi
+- `CHANGELOG.md`: lich su thay doi tung phien ban
+- `README.md`: gioi thieu va link tai
 
 ## 4. Cach cai dat va khoi dong
 
-### Cach 1: Dung file `.exe`
+Khuyen nghi: dung bo cai `AutoPowerScheduler_Setup_v3.X.exe`.
 
-1. Copy `AutoPowerScheduler.exe` vao may dich
-2. Nhap chuot phai vao file
-3. Chon `Run as administrator`
-4. Thiet lap cac lich can dung
-5. Bam `Luu & Ap dung`
+1. Tai bo cai tu trang [Releases](https://github.com/timothy68/auto-power-scheduler/releases/latest)
+2. Nhap chuot phai vao file `.exe`, chon `Run as administrator`
+3. Theo wizard Next → Finish
+4. Mo app tu Start Menu hoac Desktop shortcut (luon chay bang quyen Administrator)
+5. Thiet lap lich can dung roi bam `Luu & Ap dung`
 
-### Cach 2: Dung ban Python
-
-1. Cai Python 3.13 hoac moi hon
-2. Mo thu muc chua file
-3. Chay:
-
-```powershell
-python auto_power_scheduler.py
-```
-
-Neu chay bang file `.bat`, mo:
-
-```powershell
-Chay_Chuong_Trinh.bat
-```
+Truong hop chay binary don (khong qua bo cai), copy `AutoPowerScheduler.exe` vao may dich roi nhap chuot phai → `Run as administrator`.
 
 ## 5. Cau hinh lan dau cho kiosk
 
@@ -200,7 +192,7 @@ Nam trong dialog `Kiem tra van hanh`. Khi gap loi:
 
 Khong gui password - he thong tu redact.
 
-### Banner trang thai probe (tab Lich trinh)
+### Banner trang thai probe (tab Co Ban)
 
 Hien o dau tab, cho biet wake mode da verify chua:
 
@@ -302,37 +294,7 @@ Neu Anh muon, co the lam them:
 - 1 ban huong dan 1 trang de gui Zalo/Email
 - 1 checklist setup kiosk de ky thuat vien tick tung buoc
 
-## 12. Cach build file `.exe`
-
-Tai thu muc chua source, chay:
-
-```powershell
-build_exe.bat
-```
-
-Hoac build truc tiep:
-
-```powershell
-pyinstaller --onefile --windowed --uac-admin --name "AutoPowerScheduler" "auto_power_scheduler.py"
-```
-
-Sau khi build xong, file dau ra la:
-
-```text
-AutoPowerScheduler.exe
-```
-
-## 13. Dong goi thanh bo cai
-
-Neu may co Inno Setup, co the tao file Setup:
-
-1. Mo `installer.iss`
-2. Build bang Inno Setup
-3. File dau ra se la `AutoPowerScheduler_Setup.exe`
-
-Bo cai phu hop khi can gui cho dai ly, ky thuat vien, doi trien khai tai diem.
-
-## 14. Checklist giao cho khach
+## 12. Checklist giao cho khach
 
 Truoc khi ban giao, can xac nhan:
 
@@ -346,7 +308,7 @@ Truoc khi ban giao, can xac nhan:
 - `Kiểm tra hệ thống` khong con canh bao
 - Log co ghi nhan hoat dong binh thuong
 
-## 15. Thong tin bo phan ho tro
+## 13. Thong tin bo phan ho tro
 
 Khi bao loi, nen gui:
 

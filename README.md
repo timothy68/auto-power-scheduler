@@ -24,7 +24,7 @@ App tự kiểm tra phiên bản mới mỗi lần khởi động và hiển th�
 2. Right-click → **Run as administrator**
 3. Next → Finish
 4. App tự cấu hình `powercfg RTCWAKE = 1` (bật wake timer cho cả AC + Battery)
-5. Mở app → tab Lịch trình → click **Kiểm tra vận hành** → Probe Sleep + Probe Hibernate trước khi deploy production
+5. Mở app → tab **Chẩn Đoán** → click **🚀 Kiểm tra vận hành** → Probe Sleep + Probe Hibernate trước khi deploy production
 
 Xem [HUONG_DAN_SU_DUNG_AUTO_POWER_SCHEDULER.md](HUONG_DAN_SU_DUNG_AUTO_POWER_SCHEDULER.md) cho hướng dẫn đầy đủ + [HUONG_DAN_NHANH_GUI_KHACH_HANG.md](HUONG_DAN_NHANH_GUI_KHACH_HANG.md) cho quick start cho khách hàng.
 
@@ -36,19 +36,33 @@ Xem [HUONG_DAN_SU_DUNG_AUTO_POWER_SCHEDULER.md](HUONG_DAN_SU_DUNG_AUTO_POWER_SCH
 
 ## Tính năng chính
 
+**Quản lý lịch nguồn:**
 - Lịch wake / sleep / hibernate tự động theo ngày trong tuần
 - Tự động đăng nhập Windows sau khi máy thức
 - Bỏ qua ngày lễ / ngày nghỉ
 - **Smart Power Mode** — tự detect Sleep S3 / Hibernate / Modern Standby trên từng máy
 - **Wake Lockdown** — tắt nguồn wake không mong muốn (Maintenance, Fast Startup, NIC PM)
+- **Quick Action panel** — sleep / hibernate / shutdown ngoài giờ lịch không ảnh hưởng cycle ngày sau (v3.1.1+)
+- **Setup Wizard 3 bước** cho user lần đầu mở app (v3.1.2+)
+
+**Kiosk Boot Manager** (v3.2.0+):
+- Tab quản lý kiosk boot trực tiếp từ app, không cần mở terminal
+- Status realtime running / down / disabled cho từng app, có Start / Stop per-app
+- Cài / gỡ / chạy ngay task khởi động từ GUI
+- Telegram alert khi app crash
+- Export deploy pack `.zip` cho IT roll-out hàng loạt
+
+**Tự động hóa cho deploy hàng nghìn kiosk:**
+- **Auto-update silent** — app tự download bản mới (verify SHA256) và cài vào cửa sổ giờ rảnh, không cần user click (v3.1.1+)
 - Pre-flight check 21 bước + Real wake test
-- Bug report tự đóng gói (diagnostic + log + config redacted)
+- Bug report tự đóng gói (diagnostic + log + config redacted password)
+- Self-test mode `--self-test` để build pipeline tự verify trước khi ship
 
 Xem [CHANGELOG.md](CHANGELOG.md) cho lịch sử thay đổi từng version.
 
 ## Báo lỗi / Hỗ trợ
 
-Trong app: tab Lịch trình → **Kiểm tra vận hành** → **📤 Gửi báo cáo lỗi**.
+Trong app: tab **Chẩn Đoán** → **🚀 Kiểm tra vận hành** → **📤 Gửi báo cáo lỗi**.
 
 App tự tạo zip bundle (diagnostic + log + config redacted password) trên Desktop và mở email với template tới support. Anh chỉ cần kéo file zip vào email rồi gửi.
 
